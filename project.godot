@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Game-jam"
-run/main_scene="res://test_map.tscn"
+run/main_scene="res://scenes/test_map.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
 
 [autoload]
 
 Panku="*res://addons/panku_console/console.tscn"
+global="*res://scripts/global.gd"
 
 [display]
 

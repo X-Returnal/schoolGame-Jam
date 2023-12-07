@@ -1,3 +1,14 @@
+res://bullet.tscn
 res://addons/panku_console/res/panku_console_theme.tres
 res://bullet.gd
-res://bullet.tscn
+res://global.gd
+res://player.tscn
+res://player.gd
+res://test_map.tscn
+res://slime.tscn
+res://slime.gd
+res://emeny spawner.gd
+res://emeny_spawner.tscn
+res://scenes/bullet.tscn
+res://scenes/emeny_spawner.tscn
+res://scenes/slime.tscn

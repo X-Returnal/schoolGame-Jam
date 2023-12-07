@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2d8wougut1bx"]
+
+[ext_resource type="PackedScene" uid="uid://6vx4vl86pm88" path="res://scenes/player.tscn" id="1_sbwwc"]
+[ext_resource type="PackedScene" uid="uid://b73iqfjsi6xsw" path="res://scenes/slime.tscn" id="2_cvb0m"]
+[ext_resource type="PackedScene" uid="uid://b0irwmggmruw3" path="res://scenes/emeny_spawner.tscn" id="3_adysp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_sbwwc")]
+position = Vector2(376, 225)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_cvb0m")]
+position = Vector2(586, 199)
+
+[node name="emeny spawner" parent="." instance=ExtResource("3_adysp")]
+position = Vector2(127, 173)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(376, 225)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Camera2D"]
+color = Color(1, 0.623529, 0.341176, 1)

@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://ihsjqb13ovx7"]
 
-[ext_resource type="Texture2D" uid="uid://dlqc1uhccadgl" path="res://icon.png" id="1_35kuu"]
-[ext_resource type="Script" path="res://bullet.gd" id="2_1d5h4"]
+[ext_resource type="Texture2D" uid="uid://dlqc1uhccadgl" path="res://sprites/icon.png" id="1_ccvmg"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="2_vnqem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt4sa"]
 size = Vector2(16, 16)
 
 [node name="Sprite2D" type="Sprite2D"]
-texture = ExtResource("1_35kuu")
-script = ExtResource("2_1d5h4")
+texture = ExtResource("1_ccvmg")
+script = ExtResource("2_vnqem")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-2.38419e-07, 3.57628e-07)
