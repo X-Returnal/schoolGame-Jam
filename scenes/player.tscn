@@ -8,6 +8,8 @@
 size = Vector2(16, 24)
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 7
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_e5l6x")
 Bullet = ExtResource("2_gjpba")

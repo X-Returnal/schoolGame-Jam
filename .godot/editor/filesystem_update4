@@ -12,3 +12,13 @@ res://emeny_spawner.tscn
 res://scenes/bullet.tscn
 res://scenes/emeny_spawner.tscn
 res://scenes/slime.tscn
+res://scripts/slime.gd
+res://scenes/test_map.tscn
+res://scenes/player.tscn
+res://scripts/bullet.gd
+res://scripts/mobbing.gd
+res://walls.tscn
+res://sprites/walls.tres
+res://scripts/emeny spawner.gd
+res://walls.gd
+res://scenes/map_load.gd

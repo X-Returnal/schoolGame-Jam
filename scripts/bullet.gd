@@ -4,14 +4,21 @@ extends Node2D
 #makes bullet go fast
 var bullet_speed:int = 750
 @export
-#makes that guy go ow
 var bullet_damage:int = 1
+#makes that guy go ow
 @export 
-#prevents loss of bullet damage
 var bullet_pierce:int = 0
+#prevents loss of bullet damage
 @export
-#set bullet's collison -1: bad 0: neutrial (dmg all) 1: player 1 2: player 2
 var bullet_team:int = 0
+#set bullet's collison -1: bad 0: neutrial (dmg all) 1: player 1 2: player 2
+
+@export 
+var bullet_sprite:CompressedTexture2D
+var bullet = Sprite2D.new()
+func _ready():
+	add_child(bullet, true)
+	bullet.texture = bullet_sprite
 
 func _physics_process(delta):
 	# move dat thang
@@ -26,6 +33,8 @@ func _on_area_2d_body_entered(body):
 				bullet_pierce -= 1
 			else:
 				bullet_damage -= body.health
+			if bullet_damage <0:
+				queue_free()
 	if body.is_in_group("player1"):
 		#check alignments
 		if bullet_team < 1 or global.friendlyfire > 0:
@@ -34,6 +43,11 @@ func _on_area_2d_body_entered(body):
 				bullet_pierce -= 1
 			else:
 				bullet_damage -= body.health
-		
+			if bullet_damage <0:
+				queue_free()
 	if body.is_in_group("walls"):
 		queue_free()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()

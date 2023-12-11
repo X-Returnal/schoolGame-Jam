@@ -1,16 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://b73iqfjsi6xsw"]
 
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_xlsa2"]
-[ext_resource type="Texture2D" uid="uid://tjda8kql3u6l" path="res://sprites/slimeboi.png" id="2_4w40q"]
+[ext_resource type="Script" path="res://scripts/mobbing.gd" id="1_lf18g"]
+[ext_resource type="Texture2D" uid="uid://tjda8kql3u6l" path="res://sprites/slimeboi.png" id="2_2i5s8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4df0t"]
 size = Vector2(16, 14)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_xlsa2")
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_lf18g")
+health = 1.5
+mob_value = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_4w40q")
+texture = ExtResource("2_2i5s8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
