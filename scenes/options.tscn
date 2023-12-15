@@ -52,11 +52,11 @@ shape = SubResource("RectangleShape2D_i66hm")
 script = ExtResource("4_43mfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Level_wall_n"]
-position = Vector2(376, 136)
+position = Vector2(376, 176)
 shape = SubResource("RectangleShape2D_selid")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/Level_wall_n"]
-position = Vector2(112, 120)
+position = Vector2(128, 176)
 shape = SubResource("RectangleShape2D_selid")
 
 [node name="level_wall_e" type="StaticBody2D" parent="walls"]

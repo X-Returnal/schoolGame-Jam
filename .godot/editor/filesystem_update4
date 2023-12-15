@@ -1,9 +1,9 @@
-res://scenes/main_menu.tscn
+res://scenes/charactor_select.tscn
 res://addons/panku_console/res/panku_console_theme.tres
 res://scripts/bullet.gd
 res://scripts/player.gd
 res://sprites/walls.tres
-res://scripts/main_menu.gd
+res://README.md
 res://scenes/test_map.tscn
 res://scenes/player.tscn
 res://scenes/bullet.tscn
@@ -11,7 +11,7 @@ res://scenes/slime.tscn
 res://scenes/emeny_spawner.tscn
 res://scenes/mage.tscn
 res://scenes/pwr_mage.tscn
-res://options.tscn
+res://scenes/main_menu.tscn
 res://scenes/options.tscn
-res://scenes/charactor_select.tscn
+res://scenes/lvl_1.tscn
 res://scripts/map_load.gd
