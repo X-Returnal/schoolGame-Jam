@@ -1,5 +1,8 @@
+Marker2D
 CollisionShape2D
+Area2D
 Node2D
+RichTextLabel
 StaticBody2D
 RigidBody2D
 Node
@@ -8,7 +11,5 @@ Polygon2D
 Sprite2D
 ParallaxLayer
 MarginContainer
-Area2D
 NinePatchRect
 CanvasModulate
-Camera2D

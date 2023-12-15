@@ -27,7 +27,13 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("mobs"):
-		if bullet_team != -1 or global.friendlyfire > 1:
+		var yes_kill = false
+		if (bullet_team != -1):
+			yes_kill = true
+		if (global.friendlyfire > 1):
+			yes_kill = true
+			
+		if yes_kill:
 			body.damage(bullet_damage)
 			if bullet_pierce > 0:
 				bullet_pierce -= 1

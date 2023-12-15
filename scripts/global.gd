@@ -1,3 +1,5 @@
 extends Node
 @export
-var friendlyfire = false
+var friendlyfire = -1
+@export
+var current_mob_value = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2o2yr13fdhfo"
-path="res://.godot/imported/pwr_mage_bullet.png-b52a1c67f4fedf9d5b2c1d48f65ff5c7.ctex"
+uid="uid://cp8tsg3jmnnl1"
+path="res://.godot/imported/pwr_mage_orb.png-94e5a794c019095eaaaaea2bfa61abd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pwr_mage_bullet.png"
-dest_files=["res://.godot/imported/pwr_mage_bullet.png-b52a1c67f4fedf9d5b2c1d48f65ff5c7.ctex"]
+source_file="res://sprites/pwr_mage_orb.png"
+dest_files=["res://.godot/imported/pwr_mage_orb.png-94e5a794c019095eaaaaea2bfa61abd7.ctex"]
 
 [params]
 

@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2d8wougut1bx"]
+[gd_scene load_steps=13 format=3 uid="uid://d2d8wougut1bx"]
 
 [ext_resource type="TileSet" uid="uid://ds6oy7scretmy" path="res://sprites/walls.tres" id="1_2s0mj"]
-[ext_resource type="Script" path="res://scenes/map_load.gd" id="1_8wajh"]
+[ext_resource type="Script" path="res://scripts/map_load.gd" id="1_8wajh"]
 [ext_resource type="PackedScene" uid="uid://6vx4vl86pm88" path="res://scenes/player.tscn" id="1_e1wcu"]
 [ext_resource type="PackedScene" uid="uid://b73iqfjsi6xsw" path="res://scenes/slime.tscn" id="2_jaa0q"]
 [ext_resource type="PackedScene" uid="uid://b0irwmggmruw3" path="res://scenes/emeny_spawner.tscn" id="3_nv0j5"]
-[ext_resource type="Script" path="res://walls.gd" id="4_lx736"]
+[ext_resource type="Script" path="res://scripts/walls.gd" id="4_lx736"]
+[ext_resource type="PackedScene" uid="uid://bso7xg6nme1hs" path="res://scenes/mage.tscn" id="7_cerc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30ltd"]
 size = Vector2(16, 489)
@@ -15,6 +16,12 @@ size = Vector2(632, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwg7v"]
 size = Vector2(136, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bn41"]
+size = Vector2(16, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1pyx"]
+size = Vector2(16, 88)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8wajh")
@@ -39,9 +46,9 @@ position = Vector2(0.505, 0)
 color = Color(1, 0.623529, 0.341176, 1)
 
 [node name="walls" type="Node2D" parent="."]
-script = ExtResource("4_lx736")
 
 [node name="level_wall_H" type="StaticBody2D" parent="walls"]
+script = ExtResource("4_lx736")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/level_wall_H"]
 position = Vector2(-8, 243.5)
@@ -52,6 +59,7 @@ position = Vector2(608, 244)
 shape = SubResource("RectangleShape2D_30ltd")
 
 [node name="Level_wall_v" type="StaticBody2D" parent="walls"]
+script = ExtResource("4_lx736")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Level_wall_v"]
 position = Vector2(300, 496)
@@ -62,6 +70,7 @@ position = Vector2(300, -8)
 shape = SubResource("RectangleShape2D_3cote")
 
 [node name="building_wall_h" type="StaticBody2D" parent="walls"]
+script = ExtResource("4_lx736")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/building_wall_h"]
 position = Vector2(508, 192)
@@ -70,6 +79,17 @@ shape = SubResource("RectangleShape2D_bwg7v")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/building_wall_h"]
 position = Vector2(508, 296)
 shape = SubResource("RectangleShape2D_bwg7v")
+
+[node name="building_wall_v" type="StaticBody2D" parent="walls"]
+script = ExtResource("4_lx736")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/building_wall_v"]
+position = Vector2(448, 228)
+shape = SubResource("RectangleShape2D_0bn41")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/building_wall_v"]
+position = Vector2(568, 244)
+shape = SubResource("RectangleShape2D_w1pyx")
 
 [node name="enemeys" type="Node" parent="."]
 
@@ -80,3 +100,6 @@ limit_spawn = 10
 
 [node name="Slime" parent="enemeys" instance=ExtResource("2_jaa0q")]
 position = Vector2(240, 46)
+
+[node name="mage" parent="enemeys" instance=ExtResource("7_cerc7")]
+position = Vector2(504, 240)
