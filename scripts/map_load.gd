@@ -2,9 +2,9 @@ extends Node2D
 
 
 
-func _process(delta):
+func _process(_delta):
 	if $enemeys.get_child_count() < 1:
-		#delay
+		await get_tree().create_timer(1.5).timeout
 		print("New level!")
 		load_new_level()
 func load_new_level():
@@ -14,4 +14,8 @@ func load_new_level():
 		1:
 			get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
 		2:
-			get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
+			get_tree().change_scene_to_file("res://scenes/lvl_2.tscn")
+		3:
+			get_tree().change_scene_to_file("res://scenes/lvl_3.tscn")
+		4:
+			get_tree().change_scene_to_file("res://scenes/lvl_4.tscn")

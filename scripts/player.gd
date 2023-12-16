@@ -5,35 +5,74 @@ func _ready():
 	add_to_group("player")
 	randomize()
 	
+@export
+var health = 3 #how many damage you can tank
 
-var health = 3
+@export
+var speed = 400  # speed in ... speed units, i guess
 
-var speed = 400  # speed in pixels/sec
 @export
 var progress_speed:float = 250
-var bullet_spread:float = 0.1
-var refire:bool = false
-var progress:float = 101
+
 @export
-var reset_progress = 185
+var burst_mode = false #modifer for bullets per shot // adds a small delay
+
+@export
+var burst_speed = 80
+
+
+@export
+var bullets_per_shot = 1
+
+@export
+var bullet_spread:float = 0.1
+
+var refire:bool = false
+
+var progress:float = 101
+
+@export
+var reset_progress = 185 #what progress is set to when letting go of click
+
 var invultime:int = 120
+
+var j = bullets_per_shot # quick workaround for burst 
+
 func _physics_process(delta):
 	invultime -= 1
+	
 	var direction = Input.get_vector("left", "right", "up", "down") *30
 	look_at(get_global_mouse_position())
 	velocity = direction * speed * delta
+	
 	if health <0.01:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
 	if !Input.is_action_pressed("click"):
 		progress = reset_progress
 		refire = false
+	
 	if Input.is_action_pressed("click"):
 		progress += progress_speed*delta
 		if progress > 100:
-			
-			shoot()
-			refire = true
-			progress = 0
+			var i = bullets_per_shot
+			while i >0 and !burst_mode:
+				i-=1 
+				shoot()
+				refire = true
+				progress = 0
+			if burst_mode:
+				
+				shoot()
+				
+				if j > 0:
+					j -= 1
+					progress = burst_speed
+				else:
+					j = bullets_per_shot
+					progress = 0
+	
+	
 	move_and_slide()
 func shoot():
 	
