@@ -31,7 +31,7 @@ movie_writer/movie_file="C:/Users/XtuRn/OneDrive/Documents/game movies/school ga
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/sprite_painter/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

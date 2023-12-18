@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b73iqfjsi6xsw"]
+[gd_scene load_steps=6 format=3 uid="uid://b73iqfjsi6xsw"]
 
 [ext_resource type="Script" path="res://scripts/mobbing.gd" id="1_lf18g"]
 [ext_resource type="Texture2D" uid="uid://tjda8kql3u6l" path="res://sprites/slimeboi.png" id="2_2i5s8"]
+[ext_resource type="AudioStream" uid="uid://b8o35njyscvsd" path="res://hit.wav" id="3_vx8oa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4df0t"]
 size = Vector2(16, 14)
@@ -26,5 +27,8 @@ shape = SubResource("RectangleShape2D_4df0t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_00ewe")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vx8oa")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

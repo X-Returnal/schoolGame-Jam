@@ -85,7 +85,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 func shoot():
-	
+	$shoot.play(0)
 	var b = Bullet.instantiate()
 	b.bullet_team = 1
 	
@@ -100,6 +100,7 @@ func damage(amount):
 	if invultime > 0:
 		return false
 	else:
+		$hurt.play(0)
 		health -= amount
 		invultime = 120
 		return true

@@ -36,6 +36,7 @@ func _physics_process(delta):
 	if has_weapon:
 		progress += progress_speed*delta
 		if progress > 100:
+			$shoot.play(0)
 			var b = projectile_base.instantiate()
 			b.bullet_team =-1
 			b.bullet_speed = projectile_speed
@@ -66,6 +67,7 @@ func get_closest_player():
 	
 
 func damage(amount):
+	$hit.play(0)
 	health -= amount
 
 

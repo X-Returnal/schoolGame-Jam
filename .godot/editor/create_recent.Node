@@ -1,3 +1,6 @@
+ProgressBar
+AudioStreamPlayer
+AudioStreamPlayer2D
 Node2D
 Label
 CanvasLayer
@@ -10,5 +13,3 @@ RigidBody2D
 Node
 TileMap
 Polygon2D
-Sprite2D
-ParallaxLayer

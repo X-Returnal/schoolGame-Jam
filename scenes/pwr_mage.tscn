@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfhjdld0hlnhc"]
+[gd_scene load_steps=8 format=3 uid="uid://cfhjdld0hlnhc"]
 
 [ext_resource type="Script" path="res://scripts/mobbing.gd" id="1_5h2w3"]
 [ext_resource type="Texture2D" uid="uid://cp8tsg3jmnnl1" path="res://sprites/pwr_mage_orb.png" id="2_ta1ft"]
 [ext_resource type="Texture2D" uid="uid://dw1h5q4cfplq5" path="res://sprites/powwer.png" id="3_7bhqr"]
+[ext_resource type="AudioStream" uid="uid://b8o35njyscvsd" path="res://hit.wav" id="4_l7lsj"]
+[ext_resource type="AudioStream" uid="uid://58fkjjtkljue" path="res://emeny_shoot.wav" id="5_rrvld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4df0t"]
 size = Vector2(16, 14)
@@ -29,5 +31,11 @@ shape = SubResource("RectangleShape2D_4df0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("RectangleShape2D_guxmh")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l7lsj")
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rrvld")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

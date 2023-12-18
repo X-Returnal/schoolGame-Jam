@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqttk1o7qu847"]
+[gd_scene load_steps=4 format=3 uid="uid://dqttk1o7qu847"]
 
 [ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_0g3nv"]
 [ext_resource type="TileSet" uid="uid://ds6oy7scretmy" path="res://sprites/walls.tres" id="2_xi5bh"]
+[ext_resource type="AudioStream" uid="uid://bpcewihrxw3g7" path="res://ded.wav" id="3_jgwie"]
 
 [node name="CanvasLayer" type="Node2D"]
 script = ExtResource("1_0g3nv")
@@ -98,3 +99,7 @@ text = "Points!
 Press enter to return to the start menu
 "
 horizontal_alignment = 1
+
+[node name="ded" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jgwie")
+autoplay = true

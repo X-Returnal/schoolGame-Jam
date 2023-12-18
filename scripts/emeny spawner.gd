@@ -23,6 +23,7 @@ func _process(delta):
 	if spawned < limit_spawn or limit_spawn < 0:
 		progress += progress_speed*delta
 		if progress > 100:
+			$spawn.play(0)
 			var b = unit_spawn.instantiate()
 			owner.add_child(b)
 			b.transform = $Sprite2D.global_transform
@@ -30,4 +31,5 @@ func _process(delta):
 			progress = 0
 	$ProgressBar.value = progress
 func damage(amount):
+	$hit.play(0)
 	health -= amount
