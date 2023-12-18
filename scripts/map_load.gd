@@ -1,17 +1,18 @@
 extends Node2D
-var level_score = 0
+
 
 
 func _process(_delta):
 	if $enemeys.get_child_count() < 1:
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(.25).timeout
 		print("New level!")
 		load_new_level()
 func load_new_level():
-	global.current_score += level_score
+	global.current_score += global.level_score
+	global.cleared_floors += 1
 	match randi_range(0,5):
 		0:
-			get_tree().change_scene_to_file("res://scenes/test_map.tscn")
+			get_tree().change_scene_to_file("res://scenes/lvl_0.tscn")
 		1:
 			get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
 		2:

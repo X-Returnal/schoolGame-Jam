@@ -20,12 +20,13 @@ var projectile_base:PackedScene = preload("res://scenes/bullet.tscn")
 var projectile_image:CompressedTexture2D = preload("res://sprites/icon.png")
 @export
 var projectile_speed:int = 250
+
 func _ready():
 	add_to_group("mobs")
 	
 func _physics_process(delta):
 	if health <0.01:
-		owner.level_score += mob_value * 100
+		global.level_score += mob_value * 100
 		queue_free()
 	var player = get_closest_player()
 	var direction = (player.position-position).clamp(Vector2(-1,-1),Vector2(1,1))

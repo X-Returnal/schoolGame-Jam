@@ -50,6 +50,7 @@ func _physics_process(delta):
 	
 	if health <0.01:
 		global.end_run()
+		queue_free()
 	
 	if !Input.is_action_pressed("click"):
 		progress = reset_progress

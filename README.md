@@ -1,3 +1,5 @@
 # Game-Jam
- more of a proof of concept, unfortuantly.
-only bare bones are up
+A arcade twin stick shooter with 6 colored uninc levels
+fight through hords of emenies to get the highest score
+-- man i ned to go to bed --
+embojve (enjoy)
