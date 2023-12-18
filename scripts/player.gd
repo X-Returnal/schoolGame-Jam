@@ -18,6 +18,9 @@ var progress_speed:float = 250
 var burst_mode = false #modifer for bullets per shot // adds a small delay
 
 @export
+var murder = false
+
+@export
 var burst_speed = 80
 
 
@@ -46,7 +49,7 @@ func _physics_process(delta):
 	velocity = direction * speed * delta
 	
 	if health <0.01:
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		global.end_run()
 	
 	if !Input.is_action_pressed("click"):
 		progress = reset_progress
@@ -63,6 +66,12 @@ func _physics_process(delta):
 				progress = 0
 			if burst_mode:
 				
+				if murder:
+					while i >0:
+						refire = true
+						i-=1 
+						shoot()
+						refire = false
 				shoot()
 				
 				if j > 0:

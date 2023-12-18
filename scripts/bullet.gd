@@ -41,7 +41,7 @@ func _on_area_2d_body_entered(body):
 				bullet_damage -= body.health
 			if bullet_damage <0:
 				queue_free()
-	if body.is_in_group("player1"):
+	if body.is_in_group("player"):
 		#check alignments
 		if bullet_team < 1 or global.friendlyfire > 0:
 			body.damage(bullet_damage)

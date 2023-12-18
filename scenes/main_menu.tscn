@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgf5n17xjoyg8"]
+[gd_scene load_steps=12 format=3 uid="uid://bgf5n17xjoyg8"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_n1bml"]
 [ext_resource type="TileSet" uid="uid://ds6oy7scretmy" path="res://sprites/walls.tres" id="2_gq0qn"]
@@ -6,13 +6,13 @@
 [ext_resource type="Script" path="res://scripts/walls.gd" id="4_rp2nr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i66hm"]
-size = Vector2(16, 176)
+size = Vector2(16, 304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_selid"]
-size = Vector2(336, 16)
+size = Vector2(328, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hoid"]
-size = Vector2(28, 162)
+size = Vector2(28, 321)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4big"]
 size = Vector2(264, 16)
@@ -21,13 +21,7 @@ size = Vector2(264, 16)
 size = Vector2(224, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nweh5"]
-size = Vector2(88, 112)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwu3a"]
-size = Vector2(100, 120)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl3hn"]
-size = Vector2(80, 168)
+size = Vector2(120, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilit5"]
 size = Vector2(176, 88)
@@ -50,7 +44,7 @@ position = Vector2(328, 264)
 script = ExtResource("4_rp2nr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/level_wall_w"]
-position = Vector2(-8, 80)
+position = Vector2(-8, 144)
 shape = SubResource("RectangleShape2D_i66hm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/level_wall_w"]
@@ -61,7 +55,7 @@ shape = SubResource("RectangleShape2D_i66hm")
 script = ExtResource("4_rp2nr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Level_wall_n"]
-position = Vector2(520, -8)
+position = Vector2(524, -8)
 shape = SubResource("RectangleShape2D_selid")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/Level_wall_n"]
@@ -72,7 +66,7 @@ shape = SubResource("RectangleShape2D_selid")
 script = ExtResource("4_rp2nr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/level_wall_e"]
-position = Vector2(608, 80)
+position = Vector2(608, 159.5)
 shape = SubResource("RectangleShape2D_0hoid")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/level_wall_e"]
@@ -93,25 +87,24 @@ shape = SubResource("RectangleShape2D_hhau4")
 [node name="text" type="Node2D" parent="."]
 
 [node name="play" type="RichTextLabel" parent="text"]
-offset_left = 64.0
-offset_top = 208.0
-offset_right = 104.0
-offset_bottom = 248.0
+offset_left = 272.0
+offset_top = 80.0
+offset_right = 312.0
+offset_bottom = 120.0
 text = "Play"
 
-[node name="charactor select" type="RichTextLabel" parent="text"]
-offset_left = 256.0
-offset_top = 64.0
-offset_right = 368.0
-offset_bottom = 112.0
-text = "charator select"
+[node name="help" type="RichTextLabel" parent="text"]
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 336.0
+offset_bottom = 328.0
+text = "WASD to move
+left click to shoot
 
-[node name="options" type="RichTextLabel" parent="text"]
-offset_left = 464.0
-offset_top = 208.0
-offset_right = 536.0
-offset_bottom = 248.0
-text = "options"
+Clear all emeny to move between floors
+Clear many floors to get big score
+
+Time is ticking, Get moving!"
 
 [node name="exit" type="RichTextLabel" parent="text"]
 offset_left = 272.0
@@ -125,20 +118,8 @@ text = "exit"
 [node name="play" type="Area2D" parent="scene transitons"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene transitons/play"]
-position = Vector2(-20, 248)
+position = Vector2(292, -48)
 shape = SubResource("RectangleShape2D_nweh5")
-
-[node name="chr_select" type="Area2D" parent="scene transitons"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene transitons/chr_select"]
-position = Vector2(288, -40)
-shape = SubResource("RectangleShape2D_lwu3a")
-
-[node name="options" type="Area2D" parent="scene transitons"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene transitons/options"]
-position = Vector2(648, 256)
-shape = SubResource("RectangleShape2D_yl3hn")
 
 [node name="exit" type="Area2D" parent="scene transitons"]
 
@@ -147,6 +128,4 @@ position = Vector2(312, 508)
 shape = SubResource("RectangleShape2D_ilit5")
 
 [connection signal="body_entered" from="scene transitons/play" to="." method="_on_play_body_entered"]
-[connection signal="body_entered" from="scene transitons/chr_select" to="." method="_on_chr_select_body_entered"]
-[connection signal="body_entered" from="scene transitons/options" to="." method="_on_options_body_entered"]
 [connection signal="body_entered" from="scene transitons/exit" to="." method="_on_exit_body_entered"]

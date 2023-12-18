@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv6q0th1g315l"]
+[gd_scene load_steps=16 format=3 uid="uid://cv6q0th1g315l"]
 
 [ext_resource type="Script" path="res://scripts/map_load.gd" id="1_ujbdx"]
 [ext_resource type="TileSet" uid="uid://ds6oy7scretmy" path="res://sprites/walls.tres" id="2_gh37s"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b73iqfjsi6xsw" path="res://scenes/slime.tscn" id="6_w8g8x"]
 [ext_resource type="PackedScene" uid="uid://bso7xg6nme1hs" path="res://scenes/mage.tscn" id="7_rbw0w"]
 [ext_resource type="PackedScene" uid="uid://cfhjdld0hlnhc" path="res://scenes/pwr_mage.tscn" id="8_p64s8"]
+[ext_resource type="PackedScene" uid="uid://rqratvomnvcl" path="res://scenes/ui.tscn" id="9_83vbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30ltd"]
 size = Vector2(16, 489)
@@ -118,3 +119,5 @@ position = Vector2(400, 296)
 
 [node name="pwr_mage" parent="enemeys" instance=ExtResource("8_p64s8")]
 position = Vector2(304, 296)
+
+[node name="ui" parent="." instance=ExtResource("9_83vbu")]

@@ -25,6 +25,7 @@ func _ready():
 	
 func _physics_process(delta):
 	if health <0.01:
+		owner.level_score += mob_value * 100
 		queue_free()
 	var player = get_closest_player()
 	var direction = (player.position-position).clamp(Vector2(-1,-1),Vector2(1,1))

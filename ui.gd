@@ -7,14 +7,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_play_body_entered(body):
-	global.start_run()
-
-
-func _on_exit_body_entered(body):
-	get_tree().quit()
-
+func _process(_delta):
+	
+	$Time.text = str(global.current_time)
+	$Score.text =str(global.current_score)
+	await get_tree().create_timer(.5).timeout
+	$LevelScore.text = str($"..".level_score)
+	

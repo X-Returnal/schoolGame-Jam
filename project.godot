@@ -25,6 +25,10 @@ window/size/viewport_width=600
 window/size/viewport_height=480
 window/size/resizable=false
 
+[editor]
+
+movie_writer/movie_file="C:/Users/XtuRn/OneDrive/Documents/game movies/school game jam/movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/sprite_painter/plugin.cfg")

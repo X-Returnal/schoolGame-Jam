@@ -17,13 +17,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if health <0.01:
+		owner.level_score += 500
 		queue_free()
 	
 	if spawned < limit_spawn or limit_spawn < 0:
 		progress += progress_speed*delta
 		if progress > 100:
 			var b = unit_spawn.instantiate()
-			owner.add_child(b)
+			$"..".add_child(b)
 			b.transform = $Sprite2D.global_transform
 			spawned+=1
 			progress = 0
